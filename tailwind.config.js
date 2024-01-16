@@ -10,6 +10,12 @@ module.exports = {
         sans: ["var(--font-montserrat)"],
       },
     },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "1rem",
+      },
+    },
   },
   plugins: [],
 };

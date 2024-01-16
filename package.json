@@ -1,6 +1,6 @@
 {
   "name": "cube-io-frontend",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -28,5 +28,7 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
-  "pre-commit": ["lint"]
+  "pre-commit": [
+    "lint"
+  ]
 }

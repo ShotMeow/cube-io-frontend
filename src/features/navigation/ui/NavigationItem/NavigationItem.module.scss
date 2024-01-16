@@ -1,0 +1,22 @@
+.item {
+  @apply relative;
+  > a {
+    @apply flex items-center gap-2;
+  }
+
+  > span {
+    @apply hidden;
+  }
+
+  &:hover {
+    > a {
+      @apply text-white;
+      > svg {
+        @apply rotate-180;
+      }
+    }
+    > span {
+      @apply block;
+    }
+  }
+}

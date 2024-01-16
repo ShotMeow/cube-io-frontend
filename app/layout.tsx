@@ -3,6 +3,7 @@ import type { FC, PropsWithChildren } from "react";
 import { Montserrat } from "next/font/google";
 
 import "@/app/styles/globals.scss";
+import { Header } from "@/widgets/header";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -18,7 +19,10 @@ export const metadata: Metadata = {
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={montserrat.variable}>{children}</body>
+      <body className={montserrat.variable}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 };
