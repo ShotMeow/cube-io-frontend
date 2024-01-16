@@ -14,7 +14,6 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^14.0.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -22,7 +21,6 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
     "lint-staged": "^15.2.0",
     "postcss": "^8.4.33",
     "prettier": "^3.2.2",
@@ -30,7 +28,5 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
-  "pre-commit": [
-    "lint"
-  ]
+  "pre-commit": ["lint"]
 }
