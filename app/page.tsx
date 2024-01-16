@@ -1,8 +1,12 @@
 import React from "react";
-import type { NextPage } from "next";
+import { NextPage } from "next";
 
 const HomePage: NextPage = () => {
-  return <></>;
+  return (
+    <>
+      <a href="/home"></a>
+    </>
+  );
 };
 
 export default HomePage;

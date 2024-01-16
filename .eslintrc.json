@@ -1,3 +1,9 @@
 {
-  "extends": ["next/core-web-vitals", "prettier"]
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:@next/next/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": ["jsx-a11y", "@next/eslint-plugin-next"]
 }
