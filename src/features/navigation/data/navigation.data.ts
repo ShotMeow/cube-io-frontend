@@ -7,7 +7,7 @@ export const navigationItems: NavigationItemType[] = [
   },
   {
     title: "Resources",
-    href: "/resources",
+    href: "",
     inner: [
       {
         title: "Documentation",
@@ -41,7 +41,7 @@ export const navigationItems: NavigationItemType[] = [
   },
   {
     title: "Business",
-    href: "/business",
+    href: "",
     inner: [
       {
         title: "3D Workflow",

@@ -1,0 +1,19 @@
+.button {
+  @apply rounded-full py-3 px-8 text-lg flex items-center gap-4 transition-all;
+
+  &.fill {
+    @apply bg-gray-light border border-white/20;
+
+    &:hover {
+      @apply bg-gray-dark text-white;
+    }
+  }
+
+  &.stroke {
+    @apply text-white/70 border border-white/70;
+
+    &:hover {
+      @apply bg-white/70 text-gray-dark;
+    }
+  }
+}

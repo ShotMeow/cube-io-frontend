@@ -1,0 +1,3 @@
+.grid {
+  @apply absolute -z-10 inset-0 h-full w-full bg-transparent bg-[linear-gradient(to_right,rgba(255,255,255,0.5),transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.5),transparent_1px)] bg-[size:72px_72px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000,transparent_70%)];
+}

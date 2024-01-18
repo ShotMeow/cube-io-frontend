@@ -1,0 +1,45 @@
+.glow {
+  @apply absolute -z-20 top-0 left-0 right-0 mx-auto w-full h-1/2 contrast-200 saturate-200 brightness-200;
+
+  &::before {
+    @apply absolute top-0 left-0 right-0 mx-auto w-1/4 h-full bg-blue-900 rounded-full;
+    content: "";
+    animation: glowSmallKeyframes 10s ease infinite;
+  }
+
+  &::after {
+    @apply absolute -top-60 left-0 right-0 mx-auto w-1/4 h-full bg-blue-900 rounded-full opacity-50;
+    content: "";
+    animation: glowBigKeyframes 10s linear infinite;
+  }
+}
+
+// Keyframes
+
+@keyframes glowSmallKeyframes {
+  0% {
+    filter: blur(30px);
+  }
+
+  50% {
+    filter: blur(50px);
+  }
+
+  100% {
+    filter: blur(30px);
+  }
+}
+
+@keyframes glowBigKeyframes {
+  0% {
+    filter: blur(300px);
+  }
+
+  50% {
+    filter: blur(200px);
+  }
+
+  100% {
+    filter: blur(300px);
+  }
+}
