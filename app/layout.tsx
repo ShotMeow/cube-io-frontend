@@ -4,6 +4,7 @@ import { Montserrat } from "next/font/google";
 
 import "@/app/styles/globals.scss";
 import { Header } from "@/widgets/header";
+import { Footer } from "@/widgets/footer";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
       <body className={montserrat.variable}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
