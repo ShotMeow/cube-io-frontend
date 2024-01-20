@@ -2,10 +2,17 @@
   @apply py-4 flex items-center justify-between;
 
   .other {
-    @apply flex items-center gap-8;
+    @apply hidden md:flex md:items-center md:flex-wrap md:justify-end md:gap-8;
 
     .actions {
       @apply flex items-center gap-4;
+    }
+  }
+
+  .burger {
+    @apply md:hidden w-8 h-6 flex flex-col justify-between;
+    > span {
+      @apply w-full h-1 bg-white rounded-full;
     }
   }
 }

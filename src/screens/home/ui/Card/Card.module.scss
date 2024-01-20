@@ -1,0 +1,53 @@
+.card {
+  @apply overflow-hidden relative rounded-2xl p-6 flex flex-col gap-2 cursor-pointer transition duration-700 border border-zinc-600 bg-gradient-to-t from-gray-light to-gray-dark hover:border-zinc-400/50 hover:bg-zinc-800/10;
+
+  > .cursor {
+    @apply pointer-events-none;
+
+    > div:first-child {
+      @apply absolute inset-0 z-0 transition duration-1000 [mask-image:linear-gradient(black,transparent)];
+    }
+
+    > div:nth-child(2) {
+      @apply absolute inset-0 z-10 bg-gradient-to-br opacity-100  via-zinc-100/10  transition duration-1000 group-hover:opacity-50;
+    }
+
+    > div:last-child {
+      @apply absolute inset-0 z-10 opacity-0 mix-blend-overlay transition duration-1000 group-hover:opacity-100;
+    }
+  }
+
+  .grid {
+    @apply z-10;
+  }
+
+  &:hover {
+    > img {
+      @apply grayscale-0;
+    }
+
+    > .glow {
+      @apply opacity-100;
+    }
+  }
+
+  h4 {
+    @apply text-lg z-20;
+  }
+
+  p {
+    @apply text-white/50 z-20;
+  }
+
+  img {
+    @apply grayscale z-20 transition duration-700 h-72 object-contain;
+  }
+
+  .glow {
+    @apply z-10 translate-y-96 opacity-0 transition duration-700;
+
+    &::after, &::before {
+      @apply bg-blue-900 w-full;
+    }
+  }
+}

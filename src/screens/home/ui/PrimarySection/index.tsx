@@ -40,7 +40,7 @@ const PrimarySection: FC = () => {
         <Image src={appImage} alt="Application Image" priority />
         <Glow />
       </span>
-      <Grid />
+      <Grid size="big" />
       <p>Trusted by fast-growing companies across the world</p>
       <div className={styles.organizations}>
         <Image src={amazon} alt="Amazon Logo" />

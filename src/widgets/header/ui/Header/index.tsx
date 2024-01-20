@@ -17,6 +17,11 @@ const Header: FC = () => {
           <Button variant="fill">Get Started</Button>
         </div>
       </div>
+      <div className={styles.burger}>
+        <span />
+        <span />
+        <span />
+      </div>
     </header>
   );
 };

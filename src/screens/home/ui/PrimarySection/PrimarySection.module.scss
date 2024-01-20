@@ -1,14 +1,10 @@
 .section {
   @apply flex flex-col items-center mt-20;
   .info {
-    @apply flex flex-col items-center gap-6 w-1/2;
-
-    > h1 {
-      @apply text-7xl font-medium text-center;
-    }
+    @apply flex flex-col items-center gap-6 lg:w-1/2;
 
     > .actions {
-      @apply flex items-center gap-4;
+      @apply flex items-center flex-wrap justify-center gap-4;
 
       button > svg {
         @apply -rotate-90;
