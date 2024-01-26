@@ -3,7 +3,7 @@ import type { FC } from "react";
 import styles from "./SolutionsSection.module.scss";
 
 import { solutionsData } from "../../data/solutions.data";
-import Card from "../Card";
+import SolutionCard from "../SolutionCard";
 
 const SolutionsSection: FC = () => {
   return (
@@ -14,7 +14,7 @@ const SolutionsSection: FC = () => {
       </h3>
       <div className={styles.solutions}>
         {solutionsData.map((solution) => (
-          <Card key={solution.heading} {...solution} />
+          <SolutionCard key={solution.heading} {...solution} />
         ))}
       </div>
     </section>

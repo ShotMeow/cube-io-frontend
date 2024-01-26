@@ -2,7 +2,7 @@ import type { FC } from "react";
 import Image from "next/image";
 
 import styles from "./PrimarySection.module.scss";
-import Glow from "../Glow";
+import Glow from "../../../../shared/ui/Glow";
 
 import appImage from "../../assets/images/application.webp";
 

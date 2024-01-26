@@ -7,8 +7,10 @@ import { Header } from "@/widgets/header";
 import { Footer } from "@/widgets/footer";
 
 const montserrat = Montserrat({
+  weight: ["300", "500", "700"],
   subsets: ["latin"],
   variable: "--font-montserrat",
+  fallback: ["Arial", "sans-serif"],
 });
 
 export const metadata: Metadata = {

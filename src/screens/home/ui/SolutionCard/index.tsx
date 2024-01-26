@@ -3,16 +3,16 @@ import type { FC } from "react";
 import Image from "next/image";
 import { motion, useMotionTemplate, useSpring } from "framer-motion";
 
-import styles from "./Card.module.scss";
+import styles from "./SolutionCard.module.scss";
 
 import { SolutionType } from "../../types/solutions.types";
 
 import Grid from "@/shared/ui/Grid";
-import Glow from "../Glow";
+import Glow from "@/shared/ui/Glow";
 
 interface Props extends SolutionType {}
 
-const Card: FC<Props> = ({ imageSrc, description, heading }) => {
+const SolutionCard: FC<Props> = ({ imageSrc, description, heading }) => {
   const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
   const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
 
@@ -41,4 +41,4 @@ const Card: FC<Props> = ({ imageSrc, description, heading }) => {
   );
 };
 
-export default Card;
+export default SolutionCard;
