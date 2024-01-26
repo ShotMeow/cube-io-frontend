@@ -1,6 +1,7 @@
 import type { FC, HTMLAttributes } from "react";
-import styles from "./Glow.module.scss";
 import classNames from "classnames";
+
+import styles from "./Glow.module.scss";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {}
 
