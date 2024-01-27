@@ -1,6 +1,7 @@
 import type { FC } from "react";
 
 import styles from "./CollaborationSection.module.scss";
+
 import { collaborationsData } from "../../data/collaborations.data";
 
 import Star from "@/shared/ui/Star";

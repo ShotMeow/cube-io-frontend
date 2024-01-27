@@ -2,18 +2,17 @@ import type { FC } from "react";
 
 import styles from "./IntegrateSection.module.scss";
 
+import DiscordIcon from "@/shared/assets/icons/DiscordIcon";
+import DockerIcon from "@/shared/assets/icons/DockerIcon";
+import GithubIcon from "@/shared/assets/icons/GithubIcon";
+import KubernetesIcon from "@/shared/assets/icons/KubernetesIcon";
+import UnsplashIcon from "@/shared/assets/icons/UnsplashIcon";
+import VimeoIcon from "@/shared/assets/icons/VimeoIcon";
+import VscodeIcon from "@/shared/assets/icons/VscodeIcon";
+import WixIcon from "@/shared/assets/icons/WixIcon";
+
 import Button from "@/shared/ui/Button";
 import Arrow from "@/shared/ui/Arrow";
-
-import DiscordIcon from "../../assets/icons/Discord";
-import DockerIcon from "../../assets/icons/Docker";
-import GithubIcon from "../../assets/icons/Github";
-import KubernetesIcon from "../../assets/icons/Kubernetes";
-import SketchIcon from "../../assets/icons/Sketch";
-import UnsplashIcon from "../../assets/icons/Unsplash";
-import VimeoIcon from "../../assets/icons/Vimeo";
-import VscodeIcon from "../../assets/icons/Vscode";
-import WixIcon from "../../assets/icons/Wix";
 import Logo from "@/shared/ui/Logo";
 
 const IntegrateSection: FC = () => {

@@ -1,11 +1,11 @@
 import { SolutionType } from "@/screens/home/types/solutions.types";
 
-import modelingImage from "../assets/images/3d-modeling.webp";
-import editorImage from "../assets/images/3d-editor.webp";
-import communityAssetsImage from "../assets/images/community-assets.webp";
-import dynamicLightningImage from "../assets/images/dynamic-lightning-setup.webp";
-import layerBasedImage from "../assets/images/layer-based-workflow.webp";
-import magicMaterialsImage from "../assets/images/magic-material.webp";
+import modelingImage from "../../../shared/assets/images/3d-modeling.webp";
+import editorImage from "../../../shared/assets/images/3d-editor.webp";
+import communityAssetsImage from "../../../shared/assets/images/community-assets.webp";
+import dynamicLightningImage from "../../../shared/assets/images/dynamic-lightning-setup.webp";
+import layerBasedImage from "../../../shared/assets/images/layer-based-workflow.webp";
+import magicMaterialsImage from "../../../shared/assets/images/magic-material.webp";
 
 export const solutionsData: SolutionType[] = [
   {
