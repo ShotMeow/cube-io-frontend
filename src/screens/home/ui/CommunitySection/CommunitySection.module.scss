@@ -1,0 +1,15 @@
+.section {
+  @apply flex flex-col items-center gap-6 sm:py-40 relative;
+
+  > p {
+    @apply font-light text-white/50 text-lg mb-10;
+  }
+
+  .reviews {
+    @apply relative flex space-y-6 self-end;
+
+    &:last-child {
+      @apply self-start;
+    }
+  }
+}

@@ -10,10 +10,12 @@ import Planet from "@/shared/ui/Planet";
 const CollaborationSection: FC = () => {
   return (
     <section className={styles.section}>
-      <h2>Collaboration</h2>
-      <h3>
-        Unlimited Possibility, <br /> Unlimited Collaboration
-      </h3>
+      <hgroup>
+        <h2>Collaboration</h2>
+        <h3>
+          Unlimited Possibility, <br /> Unlimited Collaboration
+        </h3>
+      </hgroup>
       <ul>
         {collaborationsData.map((collaboration) => (
           <li key={collaboration}>

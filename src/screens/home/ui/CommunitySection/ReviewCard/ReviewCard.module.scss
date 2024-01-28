@@ -1,0 +1,26 @@
+.review {
+  @apply bg-gradient-to-b from-zinc-600 to-gray-dark rounded-xl w-screen sm:w-[calc(100vw/2)] lg:w-[calc(100vw/3)];
+  padding: 0.5px;
+
+  > .inner {
+    @apply relative bg-gray-light rounded-xl p-6 space-y-4 h-full;
+
+    header {
+      @apply flex items-center gap-4;
+
+      .avatar {
+        @apply rounded-full flex items-center justify-center border border-white/50 w-14 h-14;
+      }
+
+      .info {
+        .name {
+          @apply text-white text-lg font-medium;
+        }
+      }
+    }
+
+    p {
+      @apply font-light text-white/50 text-lg;
+    }
+  }
+}

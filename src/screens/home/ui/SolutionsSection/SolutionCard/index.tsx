@@ -5,7 +5,7 @@ import { motion, useMotionTemplate, useSpring } from "framer-motion";
 
 import styles from "./SolutionCard.module.scss";
 
-import { SolutionType } from "../../types/solutions.types";
+import { SolutionType } from "../../../types/solutions.types";
 
 import Grid from "@/shared/ui/Grid";
 import Glow from "@/shared/ui/Glow";

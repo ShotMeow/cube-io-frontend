@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 body {
-  @apply font-sans bg-gray-dark container text-white;
+  @apply font-sans bg-gray-dark container text-white overflow-x-hidden;
+}
+
+hgroup {
+  @apply flex flex-col items-center gap-4;
 }
 
 h1 {
@@ -20,4 +24,36 @@ h3 {
 
 section {
   @apply my-20;
+}
+
+// Scrollbar
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-blue-900;
+  border-radius: 0;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-900;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  @apply bg-blue-900;
 }

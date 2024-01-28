@@ -5,6 +5,7 @@ import PrimarySection from "../PrimarySection";
 import SolutionsSection from "../SolutionsSection";
 import CollaborationSection from "../CollaborationSection";
 import IntegrateSection from "../IntegrateSection";
+import CommunitySection from "../CommunitySection";
 
 const HomeScreen: FC = () => {
   return (
@@ -13,6 +14,7 @@ const HomeScreen: FC = () => {
       <SolutionsSection />
       <CollaborationSection />
       <IntegrateSection />
+      <CommunitySection />
     </main>
   );
 };
