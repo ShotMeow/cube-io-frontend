@@ -1,14 +1,20 @@
 .glow {
-  @apply absolute -z-20 top-0 left-0 right-0 mx-auto w-full h-1/2 contrast-200 saturate-200 brightness-200;
+  @apply hidden sm:block absolute -z-20 top-0 left-0 right-0 mx-auto w-full h-1/2 contrast-200 saturate-200 brightness-200;
+
+  &::before,
+  &::after {
+    @apply absolute left-0 right-0 mx-auto w-1/2 lg:w-1/4 h-full bg-blue-900 rounded-full;
+    content: "";
+  }
 
   &::before {
-    @apply absolute top-0 left-0 right-0 mx-auto w-1/4 h-full bg-blue-900 rounded-full;
+    @apply top-0;
     content: "";
     animation: glowSmallKeyframes 10s ease infinite;
   }
 
   &::after {
-    @apply absolute -top-60 left-0 right-0 mx-auto w-1/4 h-full bg-blue-900 rounded-full opacity-50;
+    @apply -top-60 opacity-50;
     content: "";
     animation: glowBigKeyframes 10s linear infinite;
   }
