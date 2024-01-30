@@ -12,17 +12,17 @@ const Footer: FC = () => {
       <p>© 2024 - cube.io</p>
       <ul>
         <li>
-          <Link href="#">
+          <Link href="#" aria-label="X Social Link">
             <X />
           </Link>
         </li>
         <li>
-          <Link href="#">
+          <Link href="#" aria-label="Discord Link">
             <Discord />
           </Link>
         </li>
         <li>
-          <Link href="#">
+          <Link href="#" aria-label="Instagram Link">
             <Instagram />
           </Link>
         </li>
