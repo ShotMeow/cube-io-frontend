@@ -29,7 +29,7 @@ section {
 // Scrollbar
 
 *::-webkit-scrollbar {
-  width: 4px;
+  @apply w-1 h-1;
 }
 
 *::-webkit-scrollbar-track {
@@ -46,14 +46,13 @@ section {
 }
 
 *::-webkit-scrollbar-thumb {
-  @apply bg-blue-900;
-  border-radius: 0;
+  @apply bg-blue-800 rounded-none;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  @apply bg-blue-900;
+  @apply bg-blue-800;
 }
 
 *::-webkit-scrollbar-thumb:active {
-  @apply bg-blue-900;
+  @apply bg-blue-800;
 }

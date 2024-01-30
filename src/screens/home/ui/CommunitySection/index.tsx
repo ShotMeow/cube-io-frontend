@@ -18,8 +18,6 @@ const CommunitySection: FC = () => {
       <Grid size="big" />
       <div className={styles.reviews}>
         <ReviewsSlider reviews={reviewsData.slice(0, 5)} />
-      </div>
-      <div className={styles.reviews}>
         <ReviewsSlider reviews={reviewsData.slice(0, 5)} direction="left" />
       </div>
     </section>

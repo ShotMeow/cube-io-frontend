@@ -43,7 +43,11 @@ const ReviewsSlider: FC<Props> = ({ reviews, direction = "right" }) => {
   useEffect(() => {
     const lastSliderChild = sliderRef.current?.lastElementChild as HTMLElement;
 
-    if (+xCoord >= lastSliderChild.getBoundingClientRect().width + 24) {
+    if (
+      +xCoord >=
+      lastSliderChild.getBoundingClientRect().width +
+        parseFloat(getComputedStyle(sliderRef.current as Element).gap)
+    ) {
       const newReviewsArr = [...reviewsState];
 
       switch (direction) {
@@ -66,8 +70,7 @@ const ReviewsSlider: FC<Props> = ({ reviews, direction = "right" }) => {
     <div
       ref={sliderRef}
       style={{
-        left: `${direction === "right" && xCoord}px`,
-        right: `${direction === "left" && xCoord}px`,
+        transform: `translateX(${direction === "left" ? "-" : ""}${xCoord}px)`,
       }}
       className={styles.slider}
     >

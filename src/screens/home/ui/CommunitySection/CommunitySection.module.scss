@@ -1,15 +1,26 @@
 .section {
-  @apply flex flex-col items-center gap-6 sm:py-40 relative;
+  @apply flex flex-col items-center gap-6 sm:py-40 relative overflow-x-hidden;
+
+  hgroup,
+  p {
+    @apply relative z-20;
+  }
 
   > p {
-    @apply font-light text-white/50 text-lg mb-10;
+    @apply font-light text-white/50 text-lg mb-10 text-center;
   }
 
   .reviews {
-    @apply relative flex space-y-6 self-end;
+    @apply space-y-6;
 
-    &:last-child {
-      @apply self-start;
+    &::before {
+      @apply hidden sm:block absolute left-0 top-0 h-full w-1/4 bg-gradient-to-r from-gray-dark to-transparent z-10;
+      content: "";
+    }
+
+    &::after {
+      @apply hidden sm:block absolute right-0 top-0 h-full w-1/4 bg-gradient-to-l from-gray-dark to-transparent z-10;
+      content: "";
     }
   }
 }
