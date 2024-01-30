@@ -14,9 +14,11 @@ import SamsungLogo from "@/shared/assets/logos/SamsungLogo";
 import SharpLogo from "@/shared/assets/logos/SharpLogo";
 import ShopifyLogo from "@/shared/assets/logos/ShopifyLogo";
 import WebflowLogo from "@/shared/assets/logos/WebflowLogo";
+
 import Button from "@/shared/ui/Button";
 import Grid from "@/shared/ui/Grid";
 import Arrow from "@/shared/ui/Arrow";
+import Glow from "@/shared/ui/Glow";
 
 const PrimarySection: FC = () => {
   return (
@@ -41,7 +43,7 @@ const PrimarySection: FC = () => {
           priority
           placeholder="blur"
         />
-        {/*<Glow />*/}
+        <Glow />
       </span>
       <Grid size="big" />
       <p>Trusted by fast-growing companies across the world</p>
