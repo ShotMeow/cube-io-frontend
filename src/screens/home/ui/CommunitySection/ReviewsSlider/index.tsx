@@ -35,6 +35,14 @@ const ReviewsSlider: FC<Props> = ({ reviews, direction = "right" }) => {
       requestId = undefined;
     };
 
+    sliderRef.current?.addEventListener("mouseenter", () => {
+      handleCancelAnimationFrame();
+    });
+
+    sliderRef.current?.addEventListener("mouseleave", () => {
+      handleRequestAnimationFrame();
+    });
+
     return () => {
       handleCancelAnimationFrame();
     };
