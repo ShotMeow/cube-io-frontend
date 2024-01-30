@@ -14,8 +14,6 @@ import SamsungLogo from "@/shared/assets/logos/SamsungLogo";
 import SharpLogo from "@/shared/assets/logos/SharpLogo";
 import ShopifyLogo from "@/shared/assets/logos/ShopifyLogo";
 import WebflowLogo from "@/shared/assets/logos/WebflowLogo";
-
-import Glow from "@/shared/ui/Glow";
 import Button from "@/shared/ui/Button";
 import Grid from "@/shared/ui/Grid";
 import Arrow from "@/shared/ui/Arrow";
@@ -37,8 +35,13 @@ const PrimarySection: FC = () => {
         </div>
       </div>
       <span className={styles.application}>
-        <Image src={appImage} alt="Application Image" priority />
-        <Glow />
+        <Image
+          src={appImage}
+          alt="Application Image"
+          priority
+          placeholder="blur"
+        />
+        {/*<Glow />*/}
       </span>
       <Grid size="big" />
       <p>Trusted by fast-growing companies across the world</p>
