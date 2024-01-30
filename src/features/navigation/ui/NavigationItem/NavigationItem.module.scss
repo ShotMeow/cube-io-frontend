@@ -1,21 +1,24 @@
 .item {
   @apply relative;
   > a {
-    @apply flex items-center gap-2 font-light;
+    @apply flex items-center gap-2 font-light text-nowrap;
   }
 
-  > span {
-    @apply hidden;
+  > div {
+    @apply hidden absolute pt-2;
   }
 
+  &:focus-within,
   &:hover {
     > a {
       @apply text-white;
+
       > svg {
         @apply rotate-180;
       }
     }
-    > span {
+
+    > div {
       @apply block;
     }
   }

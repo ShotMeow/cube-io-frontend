@@ -17,9 +17,9 @@ const NavigationItem: FC<Props> = ({ href, title, inner }) => {
         {inner && <Arrow />}
       </Link>
       {inner && (
-        <span>
+        <div>
           <NavigationItemDropdown dropdownItems={inner} />
-        </span>
+        </div>
       )}
     </li>
   );

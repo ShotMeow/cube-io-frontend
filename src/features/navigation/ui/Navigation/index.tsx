@@ -10,7 +10,7 @@ const Navigation: FC = () => {
     <nav className={styles.navigation}>
       <ul>
         {navigationItems.map((item) => (
-          <NavigationItem {...item} key={item.href} />
+          <NavigationItem {...item} key={item.title} />
         ))}
       </ul>
     </nav>

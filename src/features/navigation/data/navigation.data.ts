@@ -36,10 +36,6 @@ export const navigationItems: NavigationItemType[] = [
     ],
   },
   {
-    title: "Community",
-    href: "/community",
-  },
-  {
     title: "Business",
     href: "",
     inner: [
@@ -60,6 +56,10 @@ export const navigationItems: NavigationItemType[] = [
         href: "/customer-care",
       },
     ],
+  },
+  {
+    title: "Community",
+    href: "/community",
   },
   {
     title: "Pricing",
