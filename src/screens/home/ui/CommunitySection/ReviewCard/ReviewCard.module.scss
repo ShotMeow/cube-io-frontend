@@ -1,6 +1,10 @@
 .review {
-  @apply bg-gradient-to-b from-zinc-600 to-gray-dark rounded-xl w-screen sm:w-[calc(100vw/2)] lg:w-[calc(100vw/3)];
+  @apply bg-gradient-to-b from-zinc-600 to-gray-dark rounded-xl duration-300 transition-transform w-screen sm:w-[calc(100vw/2)] lg:w-[calc(100vw/3)];
   padding: 0.5px;
+
+  &:hover {
+    @apply scale-95;
+  }
 
   > .inner {
     @apply relative bg-gray-light rounded-xl p-6 space-y-4 h-full;

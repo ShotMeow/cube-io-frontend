@@ -1,11 +1,12 @@
-import type { FC } from "react";
+"use client";
+import { FC } from "react";
 
 import styles from "./CollaborationSection.module.scss";
 
 import { collaborationsData } from "../../data/collaborations.data";
 
 import Star from "@/shared/ui/Star";
-import Planet from "@/shared/ui/Planet";
+import PlanetCanvas from "@/screens/home/ui/CollaborationSection/PlanetCanvas";
 
 const CollaborationSection: FC = () => {
   return (
@@ -26,9 +27,7 @@ const CollaborationSection: FC = () => {
           </li>
         ))}
       </ul>
-      <span className={styles.planet}>
-        <Planet />
-      </span>
+      <PlanetCanvas />
     </section>
   );
 };
