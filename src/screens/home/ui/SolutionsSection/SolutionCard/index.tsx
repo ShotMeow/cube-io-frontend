@@ -1,7 +1,8 @@
 "use client";
-import type { FC } from "react";
+import { FC, useRef } from "react";
 import Image from "next/image";
 import { motion, useMotionTemplate, useSpring } from "framer-motion";
+import classNames from "classnames";
 
 import styles from "./SolutionCard.module.scss";
 
@@ -9,10 +10,14 @@ import { SolutionType } from "../../../types/solutions.types";
 
 import Grid from "@/shared/ui/Grid";
 import Glow from "@/shared/ui/Glow";
+import { useIntersection } from "@/shared/hooks/useIntersection";
 
 interface Props extends SolutionType {}
 
 const SolutionCard: FC<Props> = ({ imageSrc, description, heading }) => {
+  const ref = useRef<HTMLElement>(null);
+  const isIntersecting = useIntersection(ref);
+
   const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
   const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
 
@@ -26,7 +31,16 @@ const SolutionCard: FC<Props> = ({ imageSrc, description, heading }) => {
   let style = { maskImage, WebkitMaskImage: maskImage };
 
   return (
-    <article onMouseMove={onMouseMove} className={styles.card}>
+    <article
+      ref={ref}
+      onMouseMove={onMouseMove}
+      className={classNames(
+        {
+          [styles.intersection]: isIntersecting,
+        },
+        styles.card,
+      )}
+    >
       <div className={styles.cursor}>
         <div />
         <motion.div style={style} />
