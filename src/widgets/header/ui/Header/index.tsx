@@ -40,6 +40,7 @@ const Header: FC = () => {
           <button
             onClick={() => setDropdownShown(true)}
             className={styles.burger}
+            aria-label="Burger Menu Button"
           >
             <span />
             <span />
