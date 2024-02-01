@@ -44,7 +44,7 @@ html {
 }
 
 *::-webkit-scrollbar {
-  @apply xl:w-1 xl:h-1;
+  @apply w-0 h-0 xl:w-1 xl:h-1;
 }
 
 *::-webkit-scrollbar-track {
