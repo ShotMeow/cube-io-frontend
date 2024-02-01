@@ -1,16 +1,18 @@
 .item {
   @apply relative;
-  > a {
-    @apply flex items-center justify-between xl:justify-start gap-2 font-light text-nowrap;
+  > a,
+  button {
+    @apply w-full flex items-center justify-between xl:justify-start gap-2 font-light text-nowrap;
   }
 
   > div {
-    @apply xl:hidden xl:absolute translate-x-4 xl:translate-x-0 pt-2 max-h-0 overflow-hidden transition-all duration-700;
+    @apply xl:hidden xl:absolute translate-x-4 xl:translate-x-0 xl:pt-2 max-h-0 overflow-hidden transition-all duration-700;
   }
 
   &:focus-within,
   &:hover {
-    > a {
+    > a,
+    button {
       @apply text-white;
 
       > svg {

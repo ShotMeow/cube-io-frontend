@@ -12,10 +12,14 @@ interface Props extends NavigationItemType {}
 const NavigationItem: FC<Props> = ({ href, title, inner }) => {
   return (
     <li className={styles.item}>
-      <Link href={href}>
-        <span>{title}</span>
-        {inner && <Arrow />}
-      </Link>
+      {inner ? (
+        <button>
+          <span>{title}</span>
+          {inner && <Arrow />}
+        </button>
+      ) : (
+        <Link href={href}>{title}</Link>
+      )}
       {inner && (
         <div>
           <NavigationItemDropdown dropdownItems={inner} />

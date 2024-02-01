@@ -39,9 +39,7 @@ const HeaderDropdown: FC<Props> = ({ setDropdownShown }) => {
             <span />
           </button>
         </div>
-        <div className={styles.bottom}>
-          <Navigation />
-        </div>
+        <Navigation />
       </motion.div>
     </motion.header>
   );
