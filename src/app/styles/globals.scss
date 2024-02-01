@@ -34,6 +34,7 @@ main {
 
 html,
 body {
+  @apply h-full;
   scrollbar-gutter: stable;
 }
 

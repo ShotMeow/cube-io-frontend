@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { FC, PropsWithChildren } from "react";
 import { Montserrat } from "next/font/google";
+import classNames from "classnames";
 
 import "@/app/styles/globals.scss";
 import { Header } from "@/widgets/header";
@@ -22,10 +23,17 @@ export const metadata: Metadata = {
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={montserrat.variable}>
+      <body
+        className={classNames(
+          montserrat.variable,
+          "flex flex-col justify-between",
+        )}
+      >
         <Header />
-        {children}
-        <Footer />
+        <div className="h-full flex flex-col justify-between">
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

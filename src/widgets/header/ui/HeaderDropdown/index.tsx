@@ -16,6 +16,7 @@ const HeaderDropdown: FC<Props> = ({ setDropdownShown }) => {
       document.documentElement.classList.remove("--prevent-scroll");
     };
   }, []);
+
   return (
     <motion.header
       initial={{ opacity: 0 }}
@@ -34,6 +35,7 @@ const HeaderDropdown: FC<Props> = ({ setDropdownShown }) => {
           <button
             onClick={() => setDropdownShown(false)}
             className={styles.exit}
+            aria-label="Exit Button"
           >
             <span />
             <span />
