@@ -1,11 +1,11 @@
 .item {
   @apply relative;
   > a {
-    @apply flex items-center gap-2 font-light text-nowrap;
+    @apply flex items-center justify-between xl:justify-start gap-2 font-light text-nowrap;
   }
 
   > div {
-    @apply hidden absolute pt-2;
+    @apply xl:hidden xl:absolute translate-x-4 xl:translate-x-0 pt-2 max-h-0 overflow-hidden transition-all duration-700;
   }
 
   &:focus-within,
@@ -19,7 +19,7 @@
     }
 
     > div {
-      @apply block;
+      @apply xl:block max-h-96 transition-all duration-700;
     }
   }
 }

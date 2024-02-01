@@ -1,0 +1,33 @@
+.dropdown {
+  @apply xl:hidden fixed inset-x-0 inset-y-0 z-50 backdrop-blur bg-zinc-900/50 border-b border-zinc-800 overflow-y-auto;
+
+  > .inner {
+    @apply container py-4;
+
+    > .top {
+      @apply flex items-center justify-between;
+      .exit {
+        @apply relative w-7 h-7 flex flex-col items-center justify-between;
+        > span {
+          @apply w-full h-1 bg-white rounded-full;
+
+          &:first-child {
+            @apply rotate-45 translate-y-3;
+          }
+
+          &:last-child {
+            @apply -rotate-45 -translate-y-3;
+          }
+        }
+      }
+    }
+
+    > .bottom {
+      @apply mt-6;
+
+      > nav > ul {
+        @apply flex flex-col gap-4 text-white/50;
+      }
+    }
+  }
+}

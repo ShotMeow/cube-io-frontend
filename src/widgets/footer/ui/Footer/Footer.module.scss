@@ -6,6 +6,6 @@
   }
 
   > ul {
-    @apply flex items-center gap-6;
+    @apply flex items-center gap-4 md:gap-6;
   }
 }

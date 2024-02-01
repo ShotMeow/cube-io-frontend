@@ -6,11 +6,15 @@
       @apply bg-zinc-900/50 border-zinc-800;
     }
 
+    &.hide {
+      @apply -top-20 invisible xl:top-0 xl:visible;
+    }
+
     > .inner {
       @apply container py-4 flex items-center justify-between;
 
       .other {
-        @apply hidden md:flex md:items-center md:flex-wrap md:justify-end md:gap-8;
+        @apply hidden xl:flex items-center flex-wrap justify-end gap-8;
 
         .actions {
           @apply flex items-center gap-4;
@@ -18,7 +22,7 @@
       }
 
       .burger {
-        @apply md:hidden w-8 h-6 flex flex-col justify-between;
+        @apply xl:hidden w-7 h-5 flex flex-col justify-between;
         > span {
           @apply w-full h-1 bg-white rounded-full;
         }

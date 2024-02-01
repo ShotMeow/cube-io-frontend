@@ -1,26 +1,21 @@
 "use client";
-import { type FC, useEffect, useRef, useState } from "react";
+import { type FC, useRef, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import classNames from "classnames";
 
 import styles from "./Header.module.scss";
+import HeaderDropdown from "../HeaderDropdown";
 
 import Logo from "@/shared/ui/Logo";
 import { Navigation } from "@/features/navigation";
 import Button from "@/shared/ui/Button";
-import classNames from "classnames";
+import { useIntersection } from "@/shared/hooks/useIntersection";
 
 const Header: FC = () => {
   const ref = useRef<HTMLElement>(null);
-  const [isIntersecting, setIntersecting] = useState(true);
+  const isIntersecting = useIntersection(ref);
 
-  useEffect(() => {
-    if (!ref.current) return;
-    const observer = new IntersectionObserver(([entry]) =>
-      setIntersecting(entry.isIntersecting),
-    );
-
-    observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
+  const [dropdownShown, setDropdownShown] = useState<boolean>(false);
 
   return (
     <header ref={ref} className={styles.header}>
@@ -28,6 +23,7 @@ const Header: FC = () => {
         className={classNames(
           {
             [styles.intersection]: !isIntersecting,
+            [styles.hide]: dropdownShown,
           },
           styles.interlayer,
         )}
@@ -41,13 +37,21 @@ const Header: FC = () => {
               <Button variant="fill">Get Started</Button>
             </div>
           </div>
-          <div className={styles.burger}>
+          <button
+            onClick={() => setDropdownShown(true)}
+            className={styles.burger}
+          >
             <span />
             <span />
             <span />
-          </div>
+          </button>
         </div>
       </div>
+      <AnimatePresence>
+        {dropdownShown && (
+          <HeaderDropdown setDropdownShown={setDropdownShown} />
+        )}
+      </AnimatePresence>
     </header>
   );
 };

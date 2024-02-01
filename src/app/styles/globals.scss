@@ -32,8 +32,19 @@ main {
 
 // Scrollbar
 
+html,
+body {
+  scrollbar-gutter: stable;
+}
+
+html {
+  &.--prevent-scroll {
+    overflow: hidden;
+  }
+}
+
 *::-webkit-scrollbar {
-  @apply w-1 h-1;
+  @apply xl:w-1 xl:h-1;
 }
 
 *::-webkit-scrollbar-track {
