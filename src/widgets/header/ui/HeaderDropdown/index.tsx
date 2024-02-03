@@ -10,10 +10,10 @@ interface Props {
 
 const HeaderDropdown: FC<Props> = ({ setDropdownShown }) => {
   useEffect(() => {
-    document.documentElement.classList.add("--prevent-scroll");
+    document.body.classList.add("--prevent-scroll");
 
     return () => {
-      document.documentElement.classList.remove("--prevent-scroll");
+      document.body.classList.remove("--prevent-scroll");
     };
   }, []);
 

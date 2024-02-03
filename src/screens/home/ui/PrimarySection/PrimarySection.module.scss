@@ -20,7 +20,7 @@
     @apply relative w-full my-20;
 
     img {
-      @apply rounded-xl border-8 border-black bg-gray-dark;
+      @apply rounded-xl border-8 border-black bg-gray-dark w-full;
     }
 
     &::before {

@@ -38,10 +38,8 @@ body {
   scrollbar-gutter: stable;
 }
 
-html {
-  &.--prevent-scroll {
-    overflow: hidden;
-  }
+body.--prevent-scroll {
+  overflow: hidden;
 }
 
 *::-webkit-scrollbar {

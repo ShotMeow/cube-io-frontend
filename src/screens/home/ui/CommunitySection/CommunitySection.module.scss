@@ -14,12 +14,12 @@
     @apply space-y-6;
 
     &::before {
-      @apply hidden sm:block absolute left-0 top-0 h-full w-1/4 bg-gradient-to-r from-gray-dark to-transparent z-10;
+      @apply pointer-events-none hidden sm:block absolute left-0 top-0 h-full w-1/4 bg-gradient-to-r from-gray-dark to-transparent z-10;
       content: "";
     }
 
     &::after {
-      @apply hidden sm:block absolute right-0 top-0 h-full w-1/4 bg-gradient-to-l from-gray-dark to-transparent z-10;
+      @apply pointer-events-none hidden sm:block absolute right-0 top-0 h-full w-1/4 bg-gradient-to-l from-gray-dark to-transparent z-10;
       content: "";
     }
   }

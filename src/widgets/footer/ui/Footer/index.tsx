@@ -2,9 +2,10 @@ import type { FC } from "react";
 import Link from "next/link";
 
 import styles from "./Footer.module.scss";
-import X from "@/widgets/footer/assets/icons/X";
-import Discord from "@/widgets/footer/assets/icons/Discord";
-import Instagram from "@/widgets/footer/assets/icons/Instagram";
+
+import XIcon from "@/shared/assets/icons/XIcon";
+import InstagramIcon from "@/shared/assets/icons/InstagramIcon";
+import DiscordIcon from "@/shared/assets/icons/DiscordIcon";
 
 const Footer: FC = () => {
   return (
@@ -12,18 +13,18 @@ const Footer: FC = () => {
       <p>© 2024 - cube.io</p>
       <ul>
         <li>
-          <Link href="#" aria-label="X Social Link">
-            <X />
+          <Link href="#" aria-label="XIcon Social Link">
+            <XIcon />
           </Link>
         </li>
         <li>
           <Link href="#" aria-label="Discord Link">
-            <Discord />
+            <DiscordIcon />
           </Link>
         </li>
         <li>
           <Link href="#" aria-label="Instagram Link">
-            <Instagram />
+            <InstagramIcon />
           </Link>
         </li>
       </ul>

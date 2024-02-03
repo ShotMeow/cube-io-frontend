@@ -17,7 +17,13 @@ const ReviewsSlider: FC<Props> = ({ reviews, direction = "right" }) => {
   const [xCoord, setXCoord] = useState<number>(0);
   const [reviewsState, setReviewsState] = useState<ReviewType[]>(reviews);
 
+  // Animation Algorithm
   useEffect(() => {
+    if (!sliderRef.current) return;
+
+    const slider = sliderRef.current;
+
+    // Animation Frame
     const step = () => {
       requestId = undefined;
       setXCoord((prev) => prev + 0.5);
@@ -26,38 +32,41 @@ const ReviewsSlider: FC<Props> = ({ reviews, direction = "right" }) => {
 
     let requestId: number | undefined = window.requestAnimationFrame(step);
 
+    // Request Animation Frame Handler
     const handleRequestAnimationFrame = () => {
       if (!requestId) requestId = window.requestAnimationFrame(step);
     };
 
+    // Cancel Animation Frame Handler
     const handleCancelAnimationFrame = () => {
       if (requestId) window.cancelAnimationFrame(requestId);
       requestId = undefined;
     };
 
-    sliderRef.current?.addEventListener("mouseenter", () => {
-      handleCancelAnimationFrame();
-    });
-
-    sliderRef.current?.addEventListener("mouseleave", () => {
-      handleRequestAnimationFrame();
-    });
+    // Event Listeners
+    slider.addEventListener("mouseenter", handleCancelAnimationFrame);
+    slider.addEventListener("mouseleave", handleRequestAnimationFrame);
 
     return () => {
       handleCancelAnimationFrame();
+
+      slider.removeEventListener("mouseenter", handleCancelAnimationFrame);
+      slider.removeEventListener("mouseleave", handleRequestAnimationFrame);
     };
   }, [direction]);
 
+  // Rebuilding items array
   useEffect(() => {
-    const lastSliderChild = sliderRef.current?.lastElementChild as HTMLElement;
+    if (!sliderRef.current) return;
 
+    const lastSliderChild = sliderRef.current.lastElementChild as HTMLElement;
+
+    const newReviewsArr = [...reviewsState];
     if (
       +xCoord >=
       lastSliderChild.getBoundingClientRect().width +
         parseFloat(getComputedStyle(sliderRef.current as Element).gap)
     ) {
-      const newReviewsArr = [...reviewsState];
-
       switch (direction) {
         case "left":
           newReviewsArr.push(newReviewsArr.shift() as ReviewType);

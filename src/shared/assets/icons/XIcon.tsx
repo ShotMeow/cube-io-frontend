@@ -2,7 +2,7 @@ import React, { FC, type SVGProps } from "react";
 
 interface Props extends SVGProps<SVGSVGElement> {}
 
-const X: FC<Props> = ({ width = 42, height = 42, ...props }) => {
+const XIcon: FC<Props> = ({ width = 42, height = 42, ...props }) => {
   return (
     <svg
       width={width}
@@ -20,4 +20,4 @@ const X: FC<Props> = ({ width = 42, height = 42, ...props }) => {
   );
 };
 
-export default X;
+export default XIcon;

@@ -2,7 +2,7 @@ import React, { FC, type SVGProps } from "react";
 
 interface Props extends SVGProps<SVGSVGElement> {}
 
-const Instagram: FC<Props> = ({ width = 42, height = 42, ...props }) => {
+const InstagramIcon: FC<Props> = ({ width = 42, height = 42, ...props }) => {
   return (
     <svg
       width={width}
@@ -28,4 +28,4 @@ const Instagram: FC<Props> = ({ width = 42, height = 42, ...props }) => {
   );
 };
 
-export default Instagram;
+export default InstagramIcon;
