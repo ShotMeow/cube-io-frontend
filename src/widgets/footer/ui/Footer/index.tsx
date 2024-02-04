@@ -14,17 +14,17 @@ const Footer: FC = () => {
       <ul>
         <li>
           <Link href="#" aria-label="XIcon Social Link">
-            <XIcon />
+            <XIcon width={42} height={42} />
           </Link>
         </li>
         <li>
           <Link href="#" aria-label="Discord Link">
-            <DiscordIcon />
+            <DiscordIcon width={42} height={42} />
           </Link>
         </li>
         <li>
           <Link href="#" aria-label="Instagram Link">
-            <InstagramIcon />
+            <InstagramIcon width={42} height={42} />
           </Link>
         </li>
       </ul>
