@@ -2,11 +2,15 @@
   @apply relative;
   > a,
   button {
-    @apply w-full flex items-center justify-between xl:justify-start gap-2 font-light text-nowrap;
+    @apply w-full flex items-center justify-between xl:justify-start gap-2 font-light text-nowrap transition-all;
+
+    > svg {
+      @apply transition-transform;
+    }
   }
 
   > div {
-    @apply xl:hidden xl:absolute translate-x-4 xl:translate-x-0 xl:pt-2 max-h-0 overflow-hidden transition-all duration-700;
+    @apply xl:invisible xl:scale-50 xl:max-h-0 xl:absolute translate-x-4 xl:translate-x-0 xl:pt-2 max-h-0 overflow-hidden transition-all duration-300;
   }
 
   &:focus-within,
@@ -21,7 +25,7 @@
     }
 
     > div {
-      @apply xl:block max-h-96 transition-all duration-700;
+      @apply xl:visible xl:max-h-96 xl:scale-100 max-h-96 transition-all duration-700;
     }
   }
 }

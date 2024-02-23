@@ -1,0 +1,11 @@
+.info {
+  @apply flex flex-col items-center gap-6 lg:w-1/2;
+
+  > .actions {
+    @apply flex items-center flex-wrap justify-center gap-4;
+
+    button > svg {
+      @apply -rotate-90;
+    }
+  }
+}

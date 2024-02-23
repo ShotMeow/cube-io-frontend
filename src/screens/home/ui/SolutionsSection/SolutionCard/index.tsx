@@ -1,5 +1,11 @@
 "use client";
-import { FC, useRef } from "react";
+import React, {
+  createContext,
+  type FC,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import Image from "next/image";
 import { motion, useMotionTemplate, useSpring } from "framer-motion";
 import classNames from "classnames";
@@ -14,44 +20,95 @@ import { useIntersection } from "@/shared/hooks/useIntersection";
 
 interface Props extends SolutionType {}
 
+const MouseEnterContext = createContext<
+  [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
+>(undefined);
+
 const SolutionCard: FC<Props> = ({ imageSrc, description, heading }) => {
   const ref = useRef<HTMLElement>(null);
+  const [isMouseEntered, setIsMouseEntered] = useState<boolean>(false);
+
   const isIntersecting = useIntersection(ref);
 
   const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
   const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
 
-  const onMouseMove = ({ currentTarget, clientX, clientY }: any) => {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
+  const onMouseMove = (event: React.MouseEvent<HTMLElement>) => {
+    if (!ref.current) return;
+    const { left, top, width, height } = ref.current.getBoundingClientRect();
+
+    mouseX.set(event.clientX - left);
+    mouseY.set(event.clientY - top);
+
+    const x = (event.clientX - left - width / 2) / 25;
+    const y = (event.clientY - top - height / 2) / 25;
+    ref.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+  };
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsMouseEntered(true);
+    if (!ref.current) return;
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+    setIsMouseEntered(false);
+    ref.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
   };
 
   let maskImage = useMotionTemplate`radial-gradient(240px at ${mouseX}px ${mouseY}px, white, transparent)`;
   let style = { maskImage, WebkitMaskImage: maskImage };
 
+  useEffect(() => {
+    handleAnimations();
+  }, [isMouseEntered]);
+
+  const handleAnimations = () => {
+    if (!ref.current) return;
+    if (isMouseEntered) {
+      ref.current.style.transform = `translateX(30px) translateY(30px) translateZ(30px) rotateX(30px) rotateY(30px) rotateZ(30)`;
+    } else {
+      ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
+    }
+  };
+
   return (
-    <article
-      ref={ref}
-      onMouseMove={onMouseMove}
-      className={classNames(
-        {
-          [styles.intersection]: isIntersecting,
-        },
-        styles.card,
-      )}
+    <div
+      style={{
+        perspective: "1000px",
+      }}
     >
-      <div className={styles.cursor}>
-        <div />
-        <motion.div style={style} />
-        <motion.div style={style} />
-      </div>
-      <Grid className={styles.grid} size="small" />
-      <Image src={imageSrc} alt={heading} />
-      <h4>{heading}</h4>
-      <p>{description}</p>
-      <Glow className={styles.glow} />
-    </article>
+      <article
+        ref={ref}
+        onMouseMove={(event) => onMouseMove(event)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className={classNames(
+          {
+            [styles.intersection]: isIntersecting,
+          },
+          styles.card,
+        )}
+        style={{
+          transformStyle: "preserve-3d",
+        }}
+      >
+        <div className={styles.cursor}>
+          <div />
+          <motion.div style={style} />
+          <motion.div style={style} />
+        </div>
+        <Grid className={styles.grid} size="small" />
+        <Image src={imageSrc} alt={heading} />
+        <h4 className="[transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]">
+          {heading}
+        </h4>
+        <p className="[transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]">
+          {description}
+        </p>
+        <Glow className={styles.glow} />
+      </article>
+    </div>
   );
 };
 

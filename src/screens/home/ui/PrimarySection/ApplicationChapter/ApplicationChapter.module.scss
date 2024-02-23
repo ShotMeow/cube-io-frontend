@@ -1,0 +1,17 @@
+.application {
+  @apply relative w-full my-20;
+
+  img {
+    @apply rounded-xl border-8 border-black bg-gray-dark w-full;
+  }
+
+  &::before {
+    @apply rounded-xl absolute left-0 top-0 w-full h-full border-2 border-white/20;
+    content: "";
+  }
+
+  &::after {
+    @apply absolute left-0 top-0 w-full h-full bg-gradient-to-t from-gray-dark to-transparent;
+    content: "";
+  }
+}

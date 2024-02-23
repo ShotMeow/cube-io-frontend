@@ -1,37 +1,8 @@
 .section {
   @apply flex flex-col items-center;
-  .info {
-    @apply flex flex-col items-center gap-6 lg:w-1/2;
-
-    > .actions {
-      @apply flex items-center flex-wrap justify-center gap-4;
-
-      button > svg {
-        @apply -rotate-90;
-      }
-    }
-  }
 
   p {
     @apply text-white/50 text-lg text-center font-light;
-  }
-
-  .application {
-    @apply relative w-full my-20;
-
-    img {
-      @apply rounded-xl border-8 border-black bg-gray-dark w-full;
-    }
-
-    &::before {
-      @apply rounded-xl absolute left-0 top-0 w-full h-full border-2 border-white/20;
-      content: "";
-    }
-
-    &::after {
-      @apply absolute left-0 top-0 w-full h-full bg-gradient-to-t from-gray-dark to-transparent;
-      content: "";
-    }
   }
 
   .organizations {

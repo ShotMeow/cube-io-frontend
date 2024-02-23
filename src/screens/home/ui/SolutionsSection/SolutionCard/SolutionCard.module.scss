@@ -1,5 +1,5 @@
 .card {
-  @apply overflow-hidden relative rounded-2xl p-6 flex flex-col gap-2 cursor-pointer transition duration-700 border border-zinc-600 bg-gradient-to-t from-gray-light to-gray-dark hover:border-zinc-400/50 hover:bg-zinc-800/10;
+  @apply overflow-hidden relative rounded-2xl p-6 flex flex-col gap-2 cursor-pointer transition duration-300 border border-zinc-600 bg-gradient-to-t from-gray-light to-gray-dark hover:border-zinc-400/50 hover:bg-zinc-800/10;
 
   .grid {
     @apply z-10;

@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, FC, PropsWithChildren } from "react";
+import { ButtonHTMLAttributes, forwardRef, PropsWithChildren } from "react";
 import styles from "./Button.module.scss";
 import classNames from "classnames";
 
@@ -7,21 +7,26 @@ interface Props
   variant: "fill" | "stroke";
 }
 
-const Button: FC<Props> = ({ variant, children, ...props }) => {
-  return (
-    <button
-      className={classNames(
-        {
-          [styles.fill]: variant === "fill",
-          [styles.stroke]: variant === "stroke",
-        },
-        styles.button,
-      )}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-};
+const Button = forwardRef<HTMLButtonElement, Props>(
+  ({ variant, children, ...props }, ref) => {
+    return (
+      <button
+        ref={ref}
+        className={classNames(
+          {
+            [styles.fill]: variant === "fill",
+            [styles.stroke]: variant === "stroke",
+          },
+          styles.button,
+        )}
+        {...props}
+      >
+        {children}
+      </button>
+    );
+  },
+);
+
+Button.displayName = "Button";
 
 export default Button;
