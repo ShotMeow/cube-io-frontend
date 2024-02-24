@@ -1,11 +1,6 @@
 "use client";
-import React, {
-  createContext,
-  type FC,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+
+import { type FC, type MouseEvent, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useMotionTemplate, useSpring } from "framer-motion";
 import classNames from "classnames";
@@ -20,10 +15,6 @@ import { useIntersection } from "@/shared/hooks/useIntersection";
 
 interface Props extends SolutionType {}
 
-const MouseEnterContext = createContext<
-  [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
->(undefined);
-
 const SolutionCard: FC<Props> = ({ imageSrc, description, heading }) => {
   const ref = useRef<HTMLElement>(null);
   const [isMouseEntered, setIsMouseEntered] = useState<boolean>(false);
@@ -33,7 +24,7 @@ const SolutionCard: FC<Props> = ({ imageSrc, description, heading }) => {
   const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
   const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
 
-  const onMouseMove = (event: React.MouseEvent<HTMLElement>) => {
+  const handleMouseMove = (event: MouseEvent<HTMLElement>) => {
     if (!ref.current) return;
     const { left, top, width, height } = ref.current.getBoundingClientRect();
 
@@ -45,12 +36,12 @@ const SolutionCard: FC<Props> = ({ imageSrc, description, heading }) => {
     ref.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
   };
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseEnter = () => {
     setIsMouseEntered(true);
     if (!ref.current) return;
   };
 
-  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseLeave = () => {
     if (!ref.current) return;
     setIsMouseEntered(false);
     ref.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
@@ -80,7 +71,7 @@ const SolutionCard: FC<Props> = ({ imageSrc, description, heading }) => {
     >
       <article
         ref={ref}
-        onMouseMove={(event) => onMouseMove(event)}
+        onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         className={classNames(
